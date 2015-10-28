@@ -1,7 +1,7 @@
 # ExportaRest
 
 
-		
+		teste
     'zf-content-negotiation' => array(
         'controllers' => array(
             'Api\DoacaoRpc\Controller' => 'HalJson',
