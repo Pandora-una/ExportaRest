@@ -1,0 +1,34 @@
+{
+	"name" : "pandora/exporta-rest",
+	"description" : "Exporta para CSV e PDF resultados rest do APIGILITY",
+	"type" : "library",
+	"keywords" : [
+		"framework",
+		"zf2",
+		"pandora",
+		"apigility",
+		"pdf",
+		"csv",
+		"rest"
+	],
+	"homepage" : "http://www.pandora.com.br/",
+	"authors" : [{
+			"name" : "Fabio Ginzel",
+			"email" : "fabio.ginzel@pandora.com.br",
+			"homepage" : "http://www.pandora.com.br/"
+		}
+	],
+	"require" : {
+		"php" : ">=5.5.0",
+		"zendframework/zendframework" : ">=2.4.0",
+		"dino/dompdf-module" : "dev-master"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"PandoraNoCaptcha" : "src/"
+		},
+		"classmap" : [
+			"./Module.php"
+		]
+	}
+}
