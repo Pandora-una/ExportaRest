@@ -21,11 +21,11 @@
 	"require" : {
 		"php" : ">=5.5.0",
 		"zendframework/zendframework" : ">=2.4.0",
-		"dino/dompdf-module" : "dev-master"
+		"dino/dompdf-module" : "0.*"
 	},
 	"autoload" : {
 		"psr-0" : {
-			"PandoraNoCaptcha" : "src/"
+			"ExportaRest" : "src/"
 		},
 		"classmap" : [
 			"./Module.php"

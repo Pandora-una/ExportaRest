@@ -22,5 +22,21 @@ return array(
 		'exporta_rest' => array(
 			'csv_template_dir_name' => 'relatorio-csv',
 			'pdf_template_dir_name' => 'relatorio-pdf'
-		)		
+		),
+		'zf-content-negotiation' => array(
+			'selectors' => array(
+				'HalJsonExportacao' => array(
+					'ZF\Hal\View\HalJsonModel' => array(
+						'application/json',
+						'application/*+json',
+					),
+					'ExportaRest\Pdf\ExportaPdfModel' => array(
+						'application/pdf'
+					),
+					'ExportaRest\Csv\ExportaCsvModel' => array(
+						'text/csv'
+					),	
+				),
+			),
+		),
 );
