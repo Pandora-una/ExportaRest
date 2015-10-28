@@ -1,5 +1,5 @@
 {
-	"name" : "pandora/exporta-rest",
+	"name" : "pandora-una/exporta-rest",
 	"description" : "Exporta para CSV e PDF resultados rest do APIGILITY",
 	"type" : "library",
 	"keywords" : [
