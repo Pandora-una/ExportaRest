@@ -1,14 +1,13 @@
 <?php
 
-namespace Application\Csv;
+namespace ExportaRest\Csv;
 
 use Zend\EventManager\AbstractListenerAggregate;
 use Zend\EventManager\EventManagerInterface;
 use Zend\View\ViewEvent;
-use DOMPDFModule\View\Model\CsvModel;
 
 
-class CsvStrategy extends AbstractListenerAggregate
+class ExportaCsvStrategy extends AbstractListenerAggregate
 {
 
     /**
@@ -19,10 +18,10 @@ class CsvStrategy extends AbstractListenerAggregate
     /**
      * Constructor
      *
-     * @param  CsvRenderer $renderer
+     * @param  ExportaCsvRenderer $renderer
      * @return void
      */
-    public function __construct(CsvRenderer $renderer)
+    public function __construct(ExportaCsvRenderer $renderer)
     {
         $this->renderer = $renderer;
     }
@@ -51,9 +50,9 @@ class CsvStrategy extends AbstractListenerAggregate
     {
         $model = $e->getModel();
         
-        if ($model instanceof CsvModel) {
-            return $this->renderer;
-        }
+       if ($model instanceof ExportaCsvModel) {
+           return $this->renderer;
+       }
 
         return;
     }
@@ -65,7 +64,7 @@ class CsvStrategy extends AbstractListenerAggregate
      * @return void
      */
     public function injectResponse(ViewEvent $e)
-    {
+    { 
         $renderer = $e->getRenderer();
         if ($renderer !== $this->renderer) {
             // Discovered renderer is not ours; do nothing

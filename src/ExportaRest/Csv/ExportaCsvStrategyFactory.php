@@ -1,17 +1,17 @@
 <?php
 
-namespace Application\Csv;
+namespace ExportaRest\Csv;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class CsvStrategyFactory implements FactoryInterface
+class ExportaCsvStrategyFactory implements FactoryInterface
 {
 
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        $csvRenderer = $serviceLocator->get('Application\Csv\CsvRenderer');
-        $csvStrategy = new CsvStrategy($csvRenderer);
+        $csvRenderer = $serviceLocator->get('ExportaRest\Csv\ExportaCsvRenderer');
+        $csvStrategy = new ExportaCsvStrategy($csvRenderer);
         return $csvStrategy;
     }
 }

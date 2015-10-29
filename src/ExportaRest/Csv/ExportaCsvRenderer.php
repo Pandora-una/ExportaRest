@@ -1,9 +1,9 @@
 <?php
 
-namespace Application\Csv;
+namespace ExportaRest\Csv;
 
 use Zend\View\Renderer\PhpRenderer;
 
-class CsvRenderer extends PhpRenderer
+class ExportaCsvRenderer extends PhpRenderer
 {
 }

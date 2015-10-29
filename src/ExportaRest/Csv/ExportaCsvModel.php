@@ -1,11 +1,11 @@
 <?php
 
-namespace ExportaCsv\Csv;
+namespace ExportaRest\Csv;
 
 use Zend\View\Model\ViewModel;
 use Zend\Stdlib\ArrayUtils;
 
-class CsvModel extends ViewModel
+class ExportaCsvModel extends ViewModel
 {
 
     
@@ -24,6 +24,11 @@ class CsvModel extends ViewModel
      */
     protected $terminate = true;
     
+    protected $templateDir;
+    
+
+    
+    
     public function setTerminal($terminate)
     {
     	return $this;
@@ -36,7 +41,7 @@ class CsvModel extends ViewModel
     
     
     public function getTemplate() {
-    	return 'application/relatorio-csv/'.$this->getCollection()->getCollectionName();
+    	return strtolower($this->templateDir) .'/'.$this->getCollection()->getCollectionName();
     }
     
     /**
@@ -49,5 +54,15 @@ class CsvModel extends ViewModel
     	}
     	return $variables['payload'];
     }
+    
+	public function getTemplateDir() {
+		return $this->templateDir;
+	}
+	
+	public function setTemplateDir($templateDir) {
+		$this->templateDir = $templateDir;
+		return $this;
+	}
+	
     
 }

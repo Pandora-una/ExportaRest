@@ -7,16 +7,14 @@ return array(
 		),
 		'view_manager' => array(
 				'strategies' => array(
-					'ExportaRest\Csv\CsvStrategy'
+					'ExportaRest\Csv\ExportaCsvStrategy'
 				)
 		),
 		'service_manager' => array(
-			'invokables' => array(
-				'ExportaRest\Pdf\DispatchListener'=>'ExportaRest\Pdf\DispatchListener',
-				'ExportaRest\Csv\CsvRenderer'=>'ExportaRest\Csv\CsvRenderer'
-			),
 			'factories' => array(
-				'ExportaRest\Csv\CsvStrategy' => 'ExportaRest\Csv\CsvStrategyFactory',
+				'ExportaRest\Csv\ExportaCsvRenderer'=>'ExportaRest\Csv\ExportaCsvRendererFactory',
+				'ExportaRest\Listener\DispatchListener'=>'ExportaRest\Listener\DispatchListenerFactory',		
+				'ExportaRest\Csv\ExportaCsvStrategy' => 'ExportaRest\Csv\ExportaCsvStrategyFactory',
 			)
 		),
 		'exporta_rest' => array(

@@ -1,12 +1,15 @@
 <?php
-namespace Application\Pdf\View\Model;
+namespace ExportaRest\Pdf;
 
 use DOMPDFModule\View\Model\PdfModel;
 use Zend\Stdlib\ArrayUtils;
 use Zend\View\Model\ViewModel;
 
-class RelatorioPdfModel extends PdfModel
+class ExportaPdfModel extends PdfModel
 {
+	
+	protected $templateDir;
+	
 	public function setTerminal($terminate) {
 		return $this;
 	}
@@ -14,9 +17,13 @@ class RelatorioPdfModel extends PdfModel
 		return $this;
 	}
 	
+	
+
+
 	public function getTemplate() {
-		return 'application/relatorio-pdf/'.$this->getCollection()->getCollectionName();
-	} 
+		return strtolower($this->templateDir) .'/'.$this->getCollection()->getCollectionName();
+	}
+	 
 	
 	/**
 	 * @return \ZF\Hal\Collection 
@@ -29,4 +36,13 @@ class RelatorioPdfModel extends PdfModel
 		return $variables['payload'];
 	}
 
+	public function getTemplateDir() {
+		return $this->templateDir;
+	}
+	
+	public function setTemplateDir($templateDir) {
+		$this->templateDir = $templateDir;
+		return $this;
+	}
+	
 }
