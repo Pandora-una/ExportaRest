@@ -112,4 +112,4 @@ PDF
 ### Uso
 
 *	Para CSV fazer requisição com o header Accept: text/csv e o parametro get filename=nomeDoArquivo
-*	Para PDF fazer requisição com o header Accept: application/pdf e o parametro get filename=nomeDoArquivo e paperOrientation=landscape ou portrait
+*	Para PDF fazer requisição com o header Accept: application/pdf e o parametro get filename=nomeDoArquivo e paper-orientation=landscape ou portrait
