@@ -13,6 +13,7 @@ class ExportaCsvRendererFactory implements FactoryInterface
         $viewManager = $serviceLocator->get('ViewManager');
         
         $csvRenderer = new ExportaCsvRenderer();
+		$csvRenderer->setHelperPluginManager($serviceLocator->get('ViewHelperManager'));
         $csvRenderer->setResolver($viewManager->getResolver());        
         return $csvRenderer;
     }
