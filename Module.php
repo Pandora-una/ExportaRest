@@ -3,6 +3,7 @@ namespace ExportaRest;
 
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+use Zend\ModuleManager\Feature\DependencyIndicatorInterface;
 
 class Module implements ConfigProviderInterface, AutoloaderProviderInterface, DependencyIndicatorInterface
 {
