@@ -26,7 +26,7 @@ class DispatchListener extends AbstractListenerAggregate
         
     }
     
-    protected function getNamespace(\Zend\Mvc\Router\Http\RouteMatch $routeMatch) {
+    protected function getNamespace(\Zend\Mvc\Router\RouteMatch $routeMatch) {
     	$controllerName = $routeMatch->getParam('controller');
     	$namespace = explode('\\',$controllerName);
     	return $namespace[0];
