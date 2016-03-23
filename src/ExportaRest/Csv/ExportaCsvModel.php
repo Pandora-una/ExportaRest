@@ -39,15 +39,20 @@ class ExportaCsvModel extends ViewModel
     	return $this;
     }
     
-    
-    public function getTemplate() {
-    	return strtolower($this->templateDir) .'/'.$this->getCollection()->getCollectionName();
-    }
+	public function getTemplate() {
+	    if ($this->getPayload() instanceof \ZF\Hal\Entity) {
+	        $reflection = new \ReflectionClass($this->getPayload()->entity);
+	        $name = strtolower($reflection->getShortName()).'-entity';
+	    } else 
+	        $name = $this->getPayload()->getCollectionName();
+	    
+		return strtolower($this->templateDir) .'/'.$name;
+	}    
     
     /**
      * @return \ZF\Hal\Collection
      */
-    protected function getCollection() {
+    protected function getPayload() {
     	$variables = $this->getVariables();
     	if ($variables instanceof Traversable) {
     		$variables = ArrayUtils::iteratorToArray($variables);
