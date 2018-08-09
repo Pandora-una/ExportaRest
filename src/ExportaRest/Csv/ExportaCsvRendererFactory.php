@@ -11,10 +11,11 @@ class ExportaCsvRendererFactory implements FactoryInterface
 	public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $viewManager = $serviceLocator->get('ViewManager');
+        $resolver = $serviceLocator->get('ViewResolver');
         
         $csvRenderer = new ExportaCsvRenderer();
 		$csvRenderer->setHelperPluginManager($serviceLocator->get('ViewHelperManager'));
-        $csvRenderer->setResolver($viewManager->getResolver());        
+        $csvRenderer->setResolver($resolver);        
         return $csvRenderer;
     }
 }
