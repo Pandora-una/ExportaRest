@@ -43,6 +43,7 @@ class DispatchListener extends AbstractListenerAggregate
     	   
     	if ($viewModel instanceof \ExportaRest\Pdf\ExportaPdfModel) {
     		$viewModel->setTemplateDir($namespace.'/'.$this->pdfTemplateDirName);
+		$viewModel->setOption('paperOrientation', $e->getRequest()->getQuery('paper-orientation','portrait'));
 		$viewModel->setOption('display', $e->getRequest()->getQuery('paper-orientation','portrait'));
                 $viewModel->setOption('fileName',$e->getRequest()->getQuery('filename','relatorio'));
     		$e->setResult($viewModel);
