@@ -21,7 +21,7 @@
 	"require" : {
 		"php" : ">=5.4.0",
 		"zendframework/zendframework" : ">=2.4.0",
-		"dino/dompdf-module" : ">=0.1"
+		"dino/dompdf-module" : "dev-master"
 	},
 	"autoload" : {
 		"psr-0" : {
